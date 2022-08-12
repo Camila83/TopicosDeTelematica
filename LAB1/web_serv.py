@@ -4,11 +4,9 @@ import json
 class Web():
     socketServer:socketserver.ThreadingTCPServer
     
-    def __init__(self, port, host, dataPort):
+    def __init__(self, port, host):
         self.socketServer = socketserver.ThreadingTCPServer((host, port), RequestManager)
         self.path = "localFiles"
-        self.BUFFER_SIZE = 4096
-        self.dataPort = dataPort
         
     def web_start(self):
         print("Servidor iniciado con éxito")
@@ -34,6 +32,7 @@ class RequestManager(socketserver.StreamRequestHandler):
             self.downloadFile(data.get("value"))
 
         elif(data.get("method") == "DWL"):
+            print("Llega a llamar al método en el server")
             self.uploadFile(data.get("value"))
 
 
@@ -42,9 +41,9 @@ class RequestManager(socketserver.StreamRequestHandler):
         print("Se ha recibido una HTTP-Request de GET desde ", clientAddress)
         data = """
                 <html>
-                <header><title>App this</title></header>
+                <header><title>Esta es la aplicación</title></header>
                 <body>
-                Probando
+                Hola Mundo
                 </body>
                 </html>
             """
@@ -62,8 +61,9 @@ class RequestManager(socketserver.StreamRequestHandler):
     def uploadFile(self, fileName):
         filename = fileName
         dataSock = s.socket(s.AF_INET, s.SOCK_STREAM)
-        dataPort = int(self.connection.getsockname()[1]) + 10
+        dataPort = self.connection.getpeername()[1] + 10
         dataSock.bind((self.connection.getpeername()[0], dataPort))
+        print(dataSock)
         dataSock.listen(1)
         conn, _ = dataSock.accept()
         with open(self.path+"/"+filename, "rb") as file:
@@ -77,7 +77,7 @@ class RequestManager(socketserver.StreamRequestHandler):
     def downloadFile(self, fileName):
         filename = fileName
         dataSock = s.socket(s.AF_INET, s.SOCK_STREAM)
-        dataPort = int(self.connection.getsockname()[1]) + 10
+        dataPort = self.connection.getpeername()[1] + 10
         dataSock.bind((self.connection.getpeername()[0], dataPort))
         dataSock.listen(1)
         conn, _ = dataSock.accept()

@@ -1,11 +1,12 @@
 import socket as s
 import json
+import time
 
 class Client():
     
-    def __init__(self, port, host, dataPort):
+    def __init__(self, port, host):
         self.socketPort = port
-        self.dataPort = dataPort
+        self.dataPort = port + 10
         self.socket = s.socket()
         self.host = host
         self.path = "localFiles"
@@ -44,15 +45,18 @@ class Client():
             }
         validData = json.dumps(dataPacket).encode('utf-8')    
         self.socket.sendall(validData)
+        print("Manda lo que necesita el server")
+
+        time.sleep(1)
+
         dataSock = s.socket(s.AF_INET, s.SOCK_STREAM)
-        dataSock.bind((self.host, self.dataPort))
-        dataSock.listen(1)
-        conn, _ = dataSock.accept()
+        dataSock.connect((self.host, self.dataPort))
+        
         with open(self.path+"/"+fileName, "wb") as file:
-            data = conn.recv(1024)
+            data = dataSock.recv(1024)
             while (data):
                 file.write(data)
-                data = conn.recv(1024)
+                data = dataSock.recv(1024)
         dataSock.close()
         return "Archivo descargado con éxito"
     
@@ -63,14 +67,14 @@ class Client():
             }
         validData = json.dumps(dataPacket).encode('utf-8')    
         self.socket.sendall(validData)
+
         dataSock = s.socket(s.AF_INET, s.SOCK_STREAM)
-        dataSock.bind((self.host, self.dataPort))
-        dataSock.listen(1)
-        conn, _ = dataSock.accept()
+        dataSock.connect((self.host, self.dataPort))
+        
         with open(self.path+"/"+fileName, "rb") as file:
             data = file.read(1024)
             while (data):
-                conn.sendall(data)
+                dataSock.sendall(data)
                 data = file.read(1024)
         dataSock.close()
         return "Archivo subido con éxito"
@@ -78,19 +82,19 @@ class Client():
     
     
     def commandMenu(self):
-        entryPoint = input("(SERVER), seleccione una de las siguientes opciones. \n1. Envíar una GET request simple. \n2. Envíar una POST request simple. \n3. Recibir un archivo tipo PDF. \n4. Envíar un archivo. \n")
+        entryPoint = input("Bienvenido al server, escoja alguna de las siguientes opciones \n1. Envíar una GET request simple \n2. Envíar una POST request simple \n3. Recibir un archivo tipo PDF \n4. Envíar un archivo \n")
         if(entryPoint is not None):
             if(entryPoint == "1"):
                 self.sendGet()
                 self.receiveData()
             elif(entryPoint == "2"):
-                data = input("Ingrese su primer nombre y género así; \"Camila, Mujer\"")
+                data = input("Por favor ingrese su primer nombre y género así; \"John, hombre\"")
                 self.sendPost(data)
                 self.receiveData()
             elif(entryPoint == "3"):
-                data = input("Ingrese el nombre del archivo. \n")
+                data = input("Por favor ingrese el nombre del archivo \n")
                 self.sendFileDownload(data)
             elif(entryPoint == "4"):
-                data = input("Ingrese el nombre del archivo. \n")
+                data = input("Por favor ingrese el nombre del archivo \n")
                 self.sendFileUpload(data)
         
