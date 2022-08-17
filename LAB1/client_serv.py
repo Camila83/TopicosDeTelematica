@@ -45,7 +45,7 @@ class Client():
             }
         validData = json.dumps(dataPacket).encode('utf-8')    
         self.socket.sendall(validData)
-        print("Manda lo que necesita el server")
+        print("Envia lo que el server necesita.")
 
         time.sleep(1)
 
@@ -58,7 +58,7 @@ class Client():
                 file.write(data)
                 data = dataSock.recv(1024)
         dataSock.close()
-        return "Archivo descargado con éxito"
+        return "Archivo descargado exitosamente."
     
     def sendFileUpload(self, fileName): 
         dataPacket = {
@@ -77,24 +77,24 @@ class Client():
                 dataSock.sendall(data)
                 data = file.read(1024)
         dataSock.close()
-        return "Archivo subido con éxito"
+        return "Archivo subido exitosamente."
         
     
     
     def commandMenu(self):
-        entryPoint = input("Bienvenido al server, escoja alguna de las siguientes opciones \n1. Envíar una GET request simple \n2. Envíar una POST request simple \n3. Recibir un archivo tipo PDF \n4. Envíar un archivo \n")
+        entryPoint = input("Bienvenido al server, seleccione alguna de las siguientes opciones. \n1. Enviar una GET request. \n2. Enviar una POST request. \n3. Recibir un archivo tipo PDF. \n4. Enviar un archivo. \n")
         if(entryPoint is not None):
             if(entryPoint == "1"):
                 self.sendGet()
                 self.receiveData()
             elif(entryPoint == "2"):
-                data = input("Por favor ingrese su primer nombre y género así; \"John, hombre\"")
+                data = input("Ingrese un texto. Ejemplo; \"Buenos dias\"")
                 self.sendPost(data)
                 self.receiveData()
             elif(entryPoint == "3"):
-                data = input("Por favor ingrese el nombre del archivo \n")
+                data = input("Ingrese el nombre del archivo que desea descargar. \n")
                 self.sendFileDownload(data)
             elif(entryPoint == "4"):
-                data = input("Por favor ingrese el nombre del archivo \n")
+                data = input("Ingrese el nombre del archivo que desea subir. \n")
                 self.sendFileUpload(data)
         

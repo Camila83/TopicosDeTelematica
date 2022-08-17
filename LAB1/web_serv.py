@@ -9,7 +9,7 @@ class Web():
         self.path = "localFiles"
         
     def web_start(self):
-        print("Servidor iniciado con éxito")
+        print("Servidor iniciado exitosamente.")
         self.socketServer.serve_forever()
         
         
@@ -17,7 +17,7 @@ class Web():
 class RequestManager(socketserver.StreamRequestHandler):
     def handle(self):
         clientAddress = self.request.getpeername()
-        print(clientAddress, "conectado exitosamente")
+        print(clientAddress, "Conectado exitosamente.")
 
         entryBytes = self.connection.recv(1024)
         data = json.loads(entryBytes.decode('utf-8'))
@@ -40,12 +40,14 @@ class RequestManager(socketserver.StreamRequestHandler):
         clientAddress = self.request.getpeername()
         print("Se ha recibido una HTTP-Request de GET desde ", clientAddress)
         data = """
-                <html>
-                <header><title>Esta es la aplicación</title></header>
-                <body>
-                Hola Mundo
-                </body>
-                </html>
+            <html>
+            <header><title>Title</title></header>
+            <body>
+            <center>
+            Body container
+            </center>
+            </body>
+            </html>
             """
         self.connection.sendall(json.dumps(data).encode('utf-8'))
         print("Se ha enviado una HTTP-Response")
@@ -72,12 +74,12 @@ class RequestManager(socketserver.StreamRequestHandler):
                 conn.sendall(data)
                 data = file.read(1024)
         dataSock.close()
-        print("Archivo subido con éxito")
+        print("Archivo subido exitosamente.")
     
     def downloadFile(self, fileName):
         filename = fileName
         dataSock = s.socket(s.AF_INET, s.SOCK_STREAM)
-        dataPort = self.connection.getpeername()[1] + 10
+        dataPort = self.connection.getpeername()[1] + 1
         dataSock.bind((self.connection.getpeername()[0], dataPort))
         dataSock.listen(1)
         conn, _ = dataSock.accept()
@@ -87,4 +89,4 @@ class RequestManager(socketserver.StreamRequestHandler):
                 file.write(data)
                 data = conn.recv(1024)
         dataSock.close()
-        return "Archivo descargado con éxito"
+        return "Archivo descargado exitosamente."
