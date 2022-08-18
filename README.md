@@ -4,7 +4,8 @@ READ ME
 
 4 funcionalidades
 Para ejecutar el código, en la terminal se debe situar en la carpeta correspondiente
--	Py main.py
+-Py main.py
+
 Le aparecerá el siguiente mensaje:
 
 Bienvenido, seleccione lo necesario. 
@@ -17,7 +18,8 @@ Lo primero debes activar el server escribiendo (1) y te confirmara la conexión 
 
 PARTE A INICIO
 Al conectarte al servidor, activas otra terminal e ingresas el mismo comando
--	Py main.py
+-Py main.py
+
 Le aparecerá el siguiente mensaje:
 
 Bienvenido, seleccione lo necesario. 
@@ -54,7 +56,8 @@ Se ha enviado una HTTP-Response
 
 Se cierra el client. El servidor quedara activo y volver al paso de.
 Activar otra terminal e ingresas el mismo comando
--	Py main.py
+-Py main.py
+
 (LE APARECERA PARTE A PAG 1)
 Al seleccionar (3) le aparecerá que debe hacer:
 Ingrese el nombre del archivo que desea descargar.
@@ -68,7 +71,8 @@ El archivo tiene que estar en el servidor en la carpeta para realizar la operaci
 
 Se cierra el client. El servidor quedara activo y volver al paso de.
 Activar otra terminal e ingresas el mismo comando
--	Py main.py
+-Py main.py
+
 (LE APARECERA PARTE A PAG 1)
 Al seleccionar (4) le aparecerá que debe hacer:
 Ingrese el nombre del archivo que desea subir.
