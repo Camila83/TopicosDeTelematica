@@ -37,7 +37,7 @@ PARTE A FIN
 Ya lo que tu desees solo es seguir el ciclo.
 
 Al seleccionar (1) enviara un GET
-“<html>
+<html>
  <header><title>Title</title></header>
  <body>
  <center>
@@ -45,8 +45,6 @@ Al seleccionar (1) enviara un GET
  </center>
  </body>
  </html>
-
-“
 
 Se enviará este mensaje y en el servidor imprimirá un mensaje de confirmación:
 
