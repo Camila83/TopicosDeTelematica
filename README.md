@@ -37,15 +37,14 @@ PARTE A FIN
 Ya lo que tu desees solo es seguir el ciclo.
 
 Al seleccionar (1) enviara un GET
-“
-            <html>
-            <header><title>Title</title></header>
-            <body>
-            <center>
-            Body container
-            </center>
-            </body>
-            </html>
+“<html>
+ <header><title>Title</title></header>
+ <body>
+ <center>
+ Body container
+ </center>
+ </body>
+ </html>
 
 “
 
