@@ -38,7 +38,7 @@ Ya lo que tu desees solo es seguir el ciclo.
 
 Al seleccionar (1) enviara un GET
 “
-<html>
+            <html>
             <header><title>Title</title></header>
             <body>
             <center>
