@@ -1,4 +1,4 @@
-# info de la materia: STxxxx <nombre>
+# info de la materia: ST0263 Topicos especiales en telematica
 #
 # Estudiante(s): Camila Mejia Muñoz, cmejiam10@eafit.edu.co
 #
