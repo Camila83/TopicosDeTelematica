@@ -17,6 +17,7 @@ Implementar un balanceador de cargas basado en nginx que reciba el tráfico web 
 Tener al menos 2 instancias de procesamiento detrás del balanceador de cargas.
 Tener al menos 1 instancia de bases de datos mysql
 Tener al menos 1 instancia de archivos distribuidos en NFS
+![image](https://user-images.githubusercontent.com/37966987/197866220-da8e2f6a-634a-4075-820c-007b2ca41eb9.png)
 
 ## 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
 
