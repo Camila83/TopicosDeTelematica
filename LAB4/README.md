@@ -22,6 +22,9 @@ Tener al menos 1 instancia de archivos distribuidos en NFS
 
 ## 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
 No me corre con el dominio y realmente no encuntro solucion.
+El usuario se supone que debe acceder a la URL https://lab4.cmejiam10.tk desde cualquier browser pero no ingresa.
+Ingresa mediante la ip directa http://35.184.26.4/
+el ingreso
 
 # 2. Información general de diseño de alto nivel, arquitectura, patrones, mejores prácticas utilizadas.
 Se usaron contenedores Docker para la instalación de Wordpress, Nginx y MySQL en la máquina virtual.
@@ -405,7 +408,8 @@ Corremos el contenedor:
 sudo docker-compose up --build -d
 ```
 ## USARLO
-El usuario solo debe acceder a la URL https://lab4.cmejiam10.tk desde cualquier browser.
+El usuario se supone que debe acceder a la URL https://lab4.cmejiam10.tk desde cualquier browser pero no ingresa.
+Ingresa mediante la ip directa http://35.184.26.4/
 
 ## PANTALLAZOS DE LO REALIZADO
 
