@@ -17,10 +17,11 @@ Implementar un balanceador de cargas basado en nginx que reciba el tráfico web 
 Tener al menos 2 instancias de procesamiento detrás del balanceador de cargas.
 Tener al menos 1 instancia de bases de datos mysql
 Tener al menos 1 instancia de archivos distribuidos en NFS
-![image](https://user-images.githubusercontent.com/37966987/197866220-da8e2f6a-634a-4075-820c-007b2ca41eb9.png)
+
+
 
 ## 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
-
+No me corre con el dominio y realmente no encuntro solucion.
 
 # 2. Información general de diseño de alto nivel, arquitectura, patrones, mejores prácticas utilizadas.
 Se usaron contenedores Docker para la instalación de Wordpress, Nginx y MySQL en la máquina virtual.
@@ -46,12 +47,12 @@ NFS common: se usó para vincular los wordpress con el servidor NFS.
 ## Descripcion y como se creo el proyecto.
 
 Se crearon 5 VM en GCP. Asi:
-Imagen1
+![image](https://user-images.githubusercontent.com/37966987/197866220-da8e2f6a-634a-4075-820c-007b2ca41eb9.png)
 Se configuro la IP elastica para cada una de las VM. Asi:
-Imagen2
+![image](https://user-images.githubusercontent.com/37966987/197867016-5987b2c9-da18-4baf-a81c-54fa58a39fef.png)
 Se configuraron los registros DNS en GCP:
 Ya la zona estaba creada solo se edito y organizo para este laboratorio.
-Imagen 3
+![image](https://user-images.githubusercontent.com/37966987/197867248-670b6510-86d1-4533-95e6-c72ce16adcc9.png)
 
 ## Detalle del desarrolo
 
@@ -107,6 +108,7 @@ sudo letsencrypt certonly -a webroot --webroot-path=/var/www/letsencrypt -m cmej
 sudo certbot --server https://acme-v02.api.letsencrypt.org/directory -d *.cmejiam10.tk --manual --preferred-challenges dns-01 certonly
 
 ```
+
 
 Se crean las carpetas en el balanceador y los certificados.
 
@@ -404,4 +406,12 @@ sudo docker-compose up --build -d
 ```
 ## USARLO
 El usuario solo debe acceder a la URL https://lab4.cmejiam10.tk desde cualquier browser.
+
+## PANTALLAZOS DE LO REALIZADO
+
+CERTFICADOS
+![image](https://user-images.githubusercontent.com/37966987/197867526-433f2819-ac87-495e-9724-f935ce7e6630.png)
+
+PAGINA
+![image](https://user-images.githubusercontent.com/37966987/197867703-166d2d4e-75f5-46c6-bf4a-24eb3bef1d7c.png)
 
