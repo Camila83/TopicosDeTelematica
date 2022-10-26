@@ -392,7 +392,7 @@ services:
     image: wordpress:latest
     restart: always
     environment:
-      WORDPRESS_DB_HOST: 10.128.0.20:3306
+      WORDPRESS_DB_HOST: 10.128.0.13:3306
       WORDPRESS_DB_USER: cmejiam10
       WORDPRESS_DB_PASSWORD: 1234
       WORDPRESS_DB_NAME: wpdb
