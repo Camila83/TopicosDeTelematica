@@ -21,19 +21,22 @@ Tener al menos 1 instancia de archivos distribuidos en NFS
 
 
 ## 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
-No me corre con el dominio y realmente no encuntro solucion.
-El usuario se supone que debe acceder a la URL https://lab4.cmejiam10.tk desde cualquier browser pero no ingresa.
-Ingresa mediante la ip directa http://35.184.26.4/
-el ingreso
+Todos los aspectos se cumplieron
 
 # 2. Información general de diseño de alto nivel, arquitectura, patrones, mejores prácticas utilizadas.
 Se usaron contenedores Docker para la instalación de Wordpress, Nginx y MySQL en la máquina virtual.
 
 # 3. Descripción del ambiente de desarrollo y técnico: lenguaje de programación, 
+Docker, Nginx y MySQL
 
 ## IP o nombres de dominio
 
-IP elástica: 35.208.215.54
+IP elástica: 
+db 34.122.160.219 
+lb 34.70.160.171
+nfs 35.222.205.82
+w1 35.184.26.4
+w2 34.71.160.189
 Nombre de dominio: lab4.cmejiam10.tk
 Dominio con certificación SSL: https://lab4.cmejiam10.tk
 
@@ -408,8 +411,7 @@ Corremos el contenedor:
 sudo docker-compose up --build -d
 ```
 ## USARLO
-El usuario se supone que debe acceder a la URL https://lab4.cmejiam10.tk desde cualquier browser pero no ingresa.
-Ingresa mediante la ip directa http://35.184.26.4/
+El usuario debe acceder a la URL https://lab4.cmejiam10.tk desde cualquier browser.
 
 ## PANTALLAZOS DE LO REALIZADO
 
