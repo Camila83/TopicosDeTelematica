@@ -419,5 +419,7 @@ CERTFICADOS
 ![image](https://user-images.githubusercontent.com/37966987/197867526-433f2819-ac87-495e-9724-f935ce7e6630.png)
 
 PAGINA
-![image](https://user-images.githubusercontent.com/37966987/197867703-166d2d4e-75f5-46c6-bf4a-24eb3bef1d7c.png)
+![1](https://user-images.githubusercontent.com/37966987/200661845-b19f8d83-83c2-46ed-b9bf-46ad21e70d5f.png)
+![2](https://user-images.githubusercontent.com/37966987/200661860-b900c88c-773a-41b1-8048-50c34399d673.png)
+![3](https://user-images.githubusercontent.com/37966987/200661884-93606cc4-b6c9-4c33-80e2-fc8fa2a44595.png)
 
