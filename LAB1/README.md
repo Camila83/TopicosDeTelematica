@@ -1,8 +1,20 @@
-# TopicosDeTelematica
+# Info de la materia: ST0263 Tópicos Especiales en Telemática
+# Estudiante(s): Camila Mejia Muñoz, cmejiam10@eafit.edu.co
+# Profesor: Edwin Nelson Montoya Munera, emontoya@eafit.edu.co
+# Laboratorio 1
 
-READ ME
+# 1. Breve descripción de la actividad
+Implementacion de un servidor minimalista de web sockets y HTTP requests
+
+# 1.1. Qué aspectos cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
 
 4 funcionalidades
+1. Enviar una GET request.
+2. Enviar una POST request.
+3. Recibir un archivo tipo PDF.
+4. Enviar un archivo.
+
+# Cómo se compila y ejecuta.
 Para ejecutar el código, en la terminal se debe situar en la carpeta correspondiente
 -Py main.py
 
@@ -72,7 +84,8 @@ Ingresas el nombre
 NOTA
 El archivo tiene que estar en el cliente para realizar la operación de subir al servidor lo que está en el cliente
 
+# Detalles técnicos
+El programa funciona en cualquier sistema operativo que tenga Python 3.10.
 
-NOTA EL 3 Y EL 4
-Presenta fallos en Windows
-En Linux funciona perfectamente
+
+
