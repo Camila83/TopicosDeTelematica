@@ -6,13 +6,13 @@
 #
 # Laboratorio 5
 
-#Como usar el punto 5-3
-Se deben descargar los archivos, incluyendo lo de dataset y probar en un entorno apto como visualestudio
+# Como usar el punto 5-3
+Se deben descargar los archivos, incluyendo lo de dataset y probar en un entorno apto como visualstudio.
 Ejecutar de la siguiente forma.
 ```
 python nombredelpunto dataset/datausada.txt
 ```
-#EJEMPLO
+# EJEMPLO
 
 ```
 python com1-mr.py dataset/dataempresas.txt
