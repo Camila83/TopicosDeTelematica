@@ -68,7 +68,7 @@ Guardamos los datos de salida en Hue con hdfs.
 >>> wc.saveAsTextFile("hdfs:///tmp/wcout1")
 ```
 Podemos ver los datos de salida en Hue en la carpeta /tmp/wcout1.
-IMAGEN1
+![image](https://user-images.githubusercontent.com/37966987/203662605-a264a747-bd5a-4ffd-bd43-9582873e5b83.png)
 
 #Ejecutar el wordcount por linea de comando 'pyspark' INTERACTIVO en EMR con datos en S3 (tanto de entrada como de salida) vía ssh en el nodo master
 
@@ -87,18 +87,16 @@ Guardamos los datos de salida en Hue con hdfs.
 ```
 >>> wc.saveAsTextFile("hdfs:///tmp/wcout2")
 ```
-
 Guardamos los datos de salida en S3.
 ```
 >>> wc.saveAsTextFile("s3://notebookscmejiam10/wcout2")
 ```
 
 Podemos ver los datos de salida en Hue en la carpeta /tmp/wcout2.
-
-IMAGEN2
+![image](https://user-images.githubusercontent.com/37966987/203662687-e242c6e5-c1c8-48d2-9995-264e70c69fe9.png)
 
 Podemos ver que los datos de salida en S3.
-IMAGEN 3
+![image](https://user-images.githubusercontent.com/37966987/203662711-e501bc2c-2e32-418f-a740-0a02d88e27c3.png)
 
 #Ejecutar el wordcount en JupyterHub Notebooks EMR con datos en S3 (tanto datos de entrada como de salida) usando un clúster EMR
 
