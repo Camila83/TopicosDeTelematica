@@ -100,7 +100,23 @@ Podemos ver que los datos de salida en S3.
 
 #Ejecutar el wordcount en JupyterHub Notebooks EMR con datos en S3 (tanto datos de entrada como de salida) usando un clúster EMR
 
-Copiamos el notebook del wordcount y lo ejecutamos.
+Copiamos el notebook Data_processing_using_PySpark.ipynb.
+Ejecutamos las celdas del notebook.
+![image](https://user-images.githubusercontent.com/37966987/203667657-90d3d654-3437-4adb-88b6-35ca5b6c4833.png)
+![image](https://user-images.githubusercontent.com/37966987/203667666-e0c0f489-900a-4bc6-9a55-4326ff258e13.png)
+![image](https://user-images.githubusercontent.com/37966987/203667675-3aaa88e7-c25f-48bd-85cd-d2e648f8ab01.png)
+![image](https://user-images.githubusercontent.com/37966987/203667686-96da11fc-ff7f-49d6-93d4-b587698bb9bd.png)
+![image](https://user-images.githubusercontent.com/37966987/203667694-d95c2714-6d2f-47d8-84aa-0256de190282.png)
+![image](https://user-images.githubusercontent.com/37966987/203667703-9d7f29bc-0cae-480c-b0b4-93c5732b5fad.png)
+![image](https://user-images.githubusercontent.com/37966987/203667715-b60196bb-7d3d-4fb5-98e8-c1dd1ad8824e.png)
+![image](https://user-images.githubusercontent.com/37966987/203667725-d39fc1af-a4ea-495a-b7cb-46270b3a5bf4.png)
+![image](https://user-images.githubusercontent.com/37966987/203667733-057b5733-8767-4f97-ad97-fec72dfe5cbd.png)
+![image](https://user-images.githubusercontent.com/37966987/203667767-ec3787ca-6f7d-4454-9047-c9bed94c875f.png)
+![image](https://user-images.githubusercontent.com/37966987/203667783-e37dc67e-d2f3-42c7-924f-7f80996769b8.png)
+![image](https://user-images.githubusercontent.com/37966987/203667790-db573012-1665-4e49-92a4-9673f547855d.png)
+![image](https://user-images.githubusercontent.com/37966987/203667800-5207e0e9-abe6-417f-a6be-1a5140dc8aa5.png)
+![image](https://user-images.githubusercontent.com/37966987/203667807-d57966e5-a476-48eb-9b21-4bb80d4de402.png)
+![image](https://user-images.githubusercontent.com/37966987/203667814-54cd6c45-40d8-4fea-8f07-7ea1cefab109.png)
 
 
 ## REFERENCIAS
