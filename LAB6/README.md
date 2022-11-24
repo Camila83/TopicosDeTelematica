@@ -132,6 +132,8 @@ Ejecutamos las celdas del notebook.
 
 ![image](https://user-images.githubusercontent.com/37966987/203667814-54cd6c45-40d8-4fea-8f07-7ea1cefab109.png)
 
+Podemos ver que el dataframe quedó guardado en S3 en ambos formatos.
+![image](https://user-images.githubusercontent.com/37966987/203668256-a618f028-d4e6-4d2f-8363-f20078c54140.png)
 
 ## REFERENCIAS
 https://github.com/st0263eafit/st0263-2022-2/
