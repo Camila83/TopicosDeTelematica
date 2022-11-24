@@ -135,6 +135,62 @@ Ejecutamos las celdas del notebook.
 Podemos ver que el dataframe quedó guardado en S3 en ambos formatos.
 ![image](https://user-images.githubusercontent.com/37966987/203668256-a618f028-d4e6-4d2f-8363-f20078c54140.png)
 
+##Gestionar datos via SQL con HIVE y SparkSQL
+Nos conectamos a Hue y en el editor seleccionamos Hive.
+Creamos la tabla HDI con los siguientes comandos.
+
+```
+CREATE EXTERNAL TABLE HDI (id INT, country STRING, hdi FLOAT, lifeex INT, mysch INT, eysch INT, gni INT) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+STORED AS TEXTFILE 
+LOCATION 's3://notebookscmejiam10/datasets/onu/hdi/';
+
+```
+Consultamos en la tabla HDI los gni mayores a 2000
+
+```
+show tables;
+describe hdi;
+select * from hdi;
+select country, gni from hdi where gni > 2000;
+
+```
+![image](https://user-images.githubusercontent.com/37966987/203669833-4c2aeb64-bd5a-4413-80aa-33e40282dd34.png)
+Creamos la tabla EXPO con los siguientes comandos.
+```
+CREATE EXTERNAL TABLE EXPO (country STRING, expct FLOAT) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+STORED AS TEXTFILE 
+LOCATION 's3://notebookscmejiam10/datasets/onu/export/';
+```
+Ejecutamos el join de las dos tablas.
+
+```
+SELECT h.country, gni, expct FROM HDI h JOIN EXPO e ON (h.country = e.country) WHERE gni > 2000;
+```
+![image](https://user-images.githubusercontent.com/37966987/203669851-addfd275-47e6-45c6-92df-8741a09c6c0e.png)
+Creamos una tabla para realizar el wordcount con los siguientes comandos.
+
+```
+CREATE EXTERNAL TABLE docs (line STRING) 
+STORED AS TEXTFILE 
+LOCATION 's3://notebookscmejiam10/datasets/gutenberg-small/';
+```
+Hacemos el wordcount ordenado por palabra
+
+```
+SELECT word, count(1) AS count FROM (SELECT explode(split(line,' ')) AS word FROM docs) w 
+GROUP BY word 
+ORDER BY word DESC LIMIT 10;
+```
+![image](https://user-images.githubusercontent.com/37966987/203669864-717120b0-d153-4ce3-9852-9915a07772d3.png)
+Hacemos el wordcount ordenado por frecuencia de menor a mayor
+```
+SELECT word, count(1) AS count FROM (SELECT explode(split(line,' ')) AS word FROM docs) w 
+GROUP BY word 
+ORDER BY count DESC LIMIT 10;
+```
+![image](https://user-images.githubusercontent.com/37966987/203669873-6ad6b29e-c6ba-4ae9-acf1-fe1f1c48cef9.png)
 ## REFERENCIAS
 https://github.com/st0263eafit/st0263-2022-2/
 
